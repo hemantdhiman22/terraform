@@ -1,17 +1,27 @@
 variable "region" {
   default = "ap-south-1"
 }
+
+variable "project_name" {
+  type = string
+}
+
 variable "cidr_block" {
-  default = "10.10.0.0/16"
-}
-variable "vpc_name" {
-  default = "Prod_vpc"
-}
-variable "instance_tenancy" {
-  default = "default"
+  type = string
 }
 
 //Private subnet cidr
+variable "private_subnet_cidr" {
+  type = list(string)
+}
+
+//Public subnet cidr
+variable "public_subnet_cidr" {
+  type = list(string)
+}
+
+
+/*
 variable "private_az-1_cidr" {
   default = "10.10.0.0/24"
 }
@@ -50,6 +60,4 @@ variable "public_az-5_cidr" {
 variable "public_az-6_cidr" {
   default = "10.10.11.0/24"
 }
-variable "eip_name" {
-  default = "Prod_NAT_eip"
-}
+*/
